@@ -1,0 +1,31 @@
+# ============================================================
+# probe.example.txt —— 抓包 cURL 模板样例(可入库参考)
+# ============================================================
+# 实际使用时:复制本文件为 probe.txt,再粘入真实 cURL
+#     Windows:  copy probe.example.txt probe.txt
+#     Mac/Linux: cp probe.example.txt probe.txt
+# (probe.txt 已被 .gitignore 忽略,不会提交,可放心放真实凭据)
+#
+# 【怎么抓 cURL】
+#   1. 浏览器登录账号 → 打开 myaccount.google.com「个人信息 → 邮箱地址」修改页
+#   2. 邮箱输入框随便打个字停 1 秒 → 触发一条 chspYe 检查请求
+#   3. F12 → Network → 筛选框输入 chspYe → 选那条 POST 请求
+#   4. 右键 → Copy → Copy as cURL (bash)
+#   5. 粘到 probe.txt 里(替换占位)
+#
+# 【导入凭据】
+#   python check_gmail_alias.py --import-curl main -f probe.txt
+#   → 打印 MAIN_* 片段,粘进 .env 覆盖旧的 MAIN_* 即可
+#
+# 【失效信号】
+#   测名字时全变 UNKNOWN 或 HTTP 非 200 → __Secure-1PSIDTS 过期,重抓一条更新
+# ============================================================
+# ↓↓↓ 下面是 cURL 格式示例(占位假数据,换成你的真实值)↓↓↓
+
+curl 'https://myaccount.google.com/u/0/_/AccountSettingsUi/data/batchexecute?rpcids=chspYe&source-path=%2Fu%2F0%2Fgoogle-account-email&f.sid=换成你的FSID&bl=换成你的BL&hl=zh-CN&rapt=换成你的RAPT&soc-app=1&soc-platform=1&soc-device=1&_reqid=108716&rt=c' \
+  -H 'content-type: application/x-www-form-urlencoded;charset=UTF-8' \
+  -b 'SID=g.a000_换成你的SID; __Secure-1PSID=g.a000_换成你的; __Secure-1PSIDTS=sidts-换成你的; HSID=换成你的; SSID=换成你的; APISID=换成你的; SAPISID=换成你的; OSID=g.a000_换成你的; SIDCC=换成你的' \
+  -H 'origin: https://myaccount.google.com' \
+  -H 'x-same-domain: 1' \
+  -H 'x-goog-ext-525002608-jspb: [507]' \
+  --data-raw 'f.req=%5B%5B%5B%22chspYe%22%2C%22%5B%5C%22probe%5C%22%5D%22%2Cnull%2C%22generic%22%5D%5D%5D&at=换成你的AT%3A时间戳&'

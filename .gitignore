@@ -1,0 +1,28 @@
+# ── 凭据 / 敏感信息(切勿提交)──
+.env
+*.env
+.env.*
+!.env.example
+# 抓包来的 cURL(放 --import-curl 用的临时文件,含登录 cookie)
+probe.txt
+*.curl
+*.har
+names.txt
+template_*.txt
+
+# ── 运行产物 ──
+# 测试结果 CSV(每次跑都重新生成,无需入库)
+results.csv
+results_*.csv
+*.csv
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

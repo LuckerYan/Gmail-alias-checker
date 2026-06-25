@@ -1,0 +1,22 @@
+# ============================================================
+# names.example.txt —— 候选邮箱前缀样例(可入库参考)
+# ============================================================
+# 实际使用时:复制本文件为 names.txt,改成你想测的前缀
+#     Windows:  copy names.example.txt names.txt
+#     Mac/Linux: cp names.example.txt names.txt
+#
+# 【规则】
+#   - 每行一个前缀(不含 @gmail.com)
+#   - # 开头的行是注释,会被忽略
+#   - Gmail 前缀要求:6~30 字符,仅 a-z 0-9 和 .
+#     首尾不能是点,不能连续点(如 .bad / bad. / a..b 都非法)
+#   - 脚本会自动跳过非法前缀并提示原因
+#
+# 【跑测试】
+#   python check_gmail_alias.py --account main --names-file names.txt
+# ============================================================
+
+# 示例候选(删掉,换成你想测的):
+wynavel
+khryval
+nubaeth
