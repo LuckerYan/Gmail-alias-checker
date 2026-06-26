@@ -117,3 +117,7 @@ python check_gmail_alias.py --curl-file template.txt --names-file names.txt
 > 另一个坑:请求头必须带 `x-goog-ext-525002608-jspb: [507]`,否则服务器返回 gRPC 错误码
 > `[16]`(UNAUTHENTICATED),所有名字都一样、无 alternatives,会被误判。凭证过期时同样如此 ——
 > 跑之前务必重新抓一条新鲜 curl。
+
+## 友情链接
+
+- [linux.do](https://linux.do/)
