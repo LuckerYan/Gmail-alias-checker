@@ -39,6 +39,7 @@
 
 浏览器登录账号 → myaccount「修改邮箱」页 → 浏览器 DevTools 抓到 `chspYe` 那条请求 →
 **Copy as cURL (bash)** 粘进 `template.txt`,然后:
+<img width="1920" height="869" alt="d78d3b6e0867f214" src="https://github.com/user-attachments/assets/61c59c98-d734-4a7e-a5cd-e9be35b14275" />
 
 ```bash
 python check_gmail_alias.py --import-curl main -f template.txt
